@@ -1,0 +1,71 @@
+# Polymarket Bot Configuration
+# ─────────────────────────────────────────────────────────────────────────────
+# Copy this to config.yaml and fill in your credentials.
+# Sensitive values can also be set via environment variables (see README).
+
+# ── API Endpoints ─────────────────────────────────────────────────────────────
+clob_host:  "https://clob.polymarket.com"
+gamma_host: "https://gamma-api.polymarket.com"
+
+# ── Credentials ───────────────────────────────────────────────────────────────
+# Your Polygon wallet private key (WITHOUT the 0x prefix).
+# ⚠️  Never commit this to version control — use the env var instead:
+#      export POLYMARKET_PRIVATE_KEY=your_key_here
+private_key: ""
+
+# CLOB API credentials from the Polymarket Builder Program.
+# https://builders.polymarket.com
+# Can also be set via env vars: POLYMARKET_API_KEY / _SECRET / _PASSPHRASE
+api_key:        ""
+api_secret:     ""
+api_passphrase: ""
+
+# Polygon mainnet = 137  |  Amoy testnet = 80002
+chain_id: 137
+
+# ── Bot Behavior ──────────────────────────────────────────────────────────────
+# How often to poll markets and re-evaluate signals.
+poll_interval: 15s
+
+# Set to true to log orders without executing them (great for testing).
+dry_run: true
+
+log_level: info
+
+# ── Strategy ──────────────────────────────────────────────────────────────────
+strategy:
+  # Choices: "monitor" | "spread" | "momentum"
+  # monitor  — read-only, just prints market data
+  # spread   — places bids and asks around the mid-price
+  # momentum — trades in the direction of recent price movement
+  name: monitor
+
+  # Only track markets whose question contains one of these keywords.
+  # Leave empty to track top markets by volume.
+  market_keywords: []
+  #   - "bitcoin"
+  #   - "election"
+
+  # Maximum number of markets to track simultaneously.
+  max_markets: 5
+
+  # ── Spread strategy ───────────────────────────────────────────────────────
+  # Half-spread in basis points (50 bps = 0.5% each side = 1% total spread).
+  spread_bps: 50
+  # USDC value per order side.
+  order_size_usdc: 10.0
+
+  # ── Momentum strategy ─────────────────────────────────────────────────────
+  # Minimum fractional price move to trigger a trade (0.03 = 3%).
+  momentum_threshold: 0.03
+  # Number of past ticks to compare against.
+  momentum_lookback: 5
+
+# ── Risk Management ───────────────────────────────────────────────────────────
+risk:
+  # Maximum total USDC exposure across all markets.
+  max_exposure_usdc: 500.0
+  # Maximum USDC exposure per single market.
+  max_market_exposure_usdc: 100.0
+  # Stop all trading when realized P&L drops below this (negative = loss).
+  stop_loss_usdc: -50.0

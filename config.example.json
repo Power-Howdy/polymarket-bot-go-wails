@@ -1,0 +1,35 @@
+{
+  "_comment": "Copy this file to config.json and fill in your credentials.",
+
+  "clob_host":  "https://clob.polymarket.com",
+  "gamma_host": "https://gamma-api.polymarket.com",
+
+  "private_key":    "",
+  "api_key":        "",
+  "api_secret":     "",
+  "api_passphrase": "",
+
+  "chain_id": 137,
+
+  "poll_interval": "15s",
+  "dry_run":       true,
+  "log_level":     "info",
+
+  "strategy": {
+    "name":        "monitor",
+    "market_keywords": [],
+    "max_markets": 5,
+
+    "spread_bps":      50,
+    "order_size_usdc": 10.0,
+
+    "momentum_threshold": 0.03,
+    "momentum_lookback":  5
+  },
+
+  "risk": {
+    "max_exposure_usdc":        500.0,
+    "max_market_exposure_usdc": 100.0,
+    "stop_loss_usdc":           -50.0
+  }
+}

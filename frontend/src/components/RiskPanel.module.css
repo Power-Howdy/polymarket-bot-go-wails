@@ -1,0 +1,51 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-size: 11px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.value {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.max { font-size: 11px; color: var(--text-dim); font-family: var(--font-mono); }
+
+.slash { color: var(--text-dim); margin: 0 2px; }
+
+.barTrack {
+  height: 5px;
+  background: var(--bg-hover);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+.green  { background: var(--green); }
+.yellow { background: var(--yellow); }
+.red    { background: var(--red); }
+
+.divider {
+  height: 1px;
+  background: var(--border-dim);
+  margin: 2px 0;
+}

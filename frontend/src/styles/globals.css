@@ -1,0 +1,79 @@
+/* ── Design tokens ───────────────────────────────────────────── */
+:root {
+  --bg-base:    #0a0c12;
+  --bg-surface: #111420;
+  --bg-card:    #161929;
+  --bg-hover:   #1e2235;
+  --border:     #252a3d;
+  --border-dim: #1a1e2e;
+
+  --text-primary:   #e8eaf0;
+  --text-secondary: #8b92a8;
+  --text-dim:       #4a5068;
+
+  --accent:     #5b7fff;
+  --accent-dim: #2a3a6e;
+  --green:      #30d98b;
+  --green-dim:  #0d3d26;
+  --red:        #f05464;
+  --red-dim:    #3d0d14;
+  --yellow:     #f5c842;
+  --yellow-dim: #3d3010;
+
+  --radius-sm: 6px;
+  --radius:    10px;
+  --radius-lg: 14px;
+
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ── Reset ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+
+/* ── Utility classes ─────────────────────────────────────────── */
+.mono { font-family: var(--font-mono); }
+.text-green  { color: var(--green); }
+.text-red    { color: var(--red); }
+.text-yellow { color: var(--yellow); }
+.text-accent { color: var(--accent); }
+.text-dim    { color: var(--text-dim); }
+.text-secondary { color: var(--text-secondary); }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.badge-green  { background: var(--green-dim);  color: var(--green); }
+.badge-red    { background: var(--red-dim);    color: var(--red); }
+.badge-yellow { background: var(--yellow-dim); color: var(--yellow); }
+.badge-accent { background: var(--accent-dim); color: var(--accent); }
+.badge-dim    { background: var(--bg-hover);   color: var(--text-secondary); }
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 13px;
+}

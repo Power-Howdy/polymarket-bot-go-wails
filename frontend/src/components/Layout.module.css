@@ -1,0 +1,76 @@
+.shell {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 180px;
+  flex-shrink: 0;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border-dim);
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 18px 20px;
+  border-bottom: 1px solid var(--border-dim);
+  margin-bottom: 12px;
+}
+.logoIcon { font-size: 20px; color: var(--accent); }
+.logoText  { font-size: 15px; font-weight: 700; color: var(--text-primary); letter-spacing: -0.02em; }
+
+.nav { display: flex; flex-direction: column; gap: 2px; padding: 0 8px; flex: 1; }
+
+.navBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+  transition: background 0.12s, color 0.12s;
+}
+.navBtn:hover { background: var(--bg-hover); color: var(--text-primary); }
+.navBtn.active { background: var(--accent-dim); color: var(--accent); }
+
+.navIcon { font-size: 16px; width: 18px; text-align: center; }
+
+.statusArea {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-top: 1px solid var(--border-dim);
+  margin-top: auto;
+}
+.statusDot {
+  width: 8px; height: 8px; border-radius: 50%;
+  flex-shrink: 0;
+}
+.dotGreen { background: var(--green); box-shadow: 0 0 6px var(--green); animation: pulse 2s infinite; }
+.dotGrey  { background: var(--text-dim); }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+.statusLabel { color: var(--text-secondary); font-size: 12px; }
+
+.main {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--bg-base);
+}
