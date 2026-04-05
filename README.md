@@ -2,7 +2,7 @@
 
 A Go trading bot for [Polymarket](https://polymarket.com) — the world's largest prediction market.
 
-**Prebuilt desktop app:** download installers and binaries from [GitHub Releases](https://github.com/Power-Howdy/polymarket-bot-go-wails/releases/latest).
+**Prebuilt desktop app:** Windows executable at [`build/bin/polymarket-bot.exe`](./build/bin/polymarket-bot.exe) (e.g. after `wails build`). Installers and release assets: [GitHub Releases](https://github.com/Power-Howdy/polymarket-bot-go-wails/releases/latest).
 
 ## Features
 
