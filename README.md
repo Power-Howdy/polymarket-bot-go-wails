@@ -2,6 +2,8 @@
 
 A Go trading bot for [Polymarket](https://polymarket.com) — the world's largest prediction market.
 
+**Prebuilt desktop app:** download installers and binaries from [GitHub Releases](https://github.com/Power-Howdy/polymarket-bot-go-wails/releases/latest).
+
 ## Features
 
 - **Market discovery** via Gamma API (keyword filtering, volume sorting)
